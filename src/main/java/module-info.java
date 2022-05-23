@@ -15,4 +15,5 @@ module com.example.javaprojekt226b {
     opens ui.login to javafx.fxml;
     exports ui.main;
     opens ui.main to javafx.fxml;
+
 }

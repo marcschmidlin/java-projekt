@@ -2,7 +2,9 @@ package ui.login;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -10,12 +12,12 @@ import java.io.IOException;
 public class start extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("logingui.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 700, 400);
+        Parent root = FXMLLoader.load(getClass().getResource("logingui.fxml"));
+        Scene scene = new Scene(root, 700, 400);
         stage.setTitle("Ausgaben Tracker");
         stage.setScene(scene);
         stage.show();
+        stage.getIcons().add(new Image("/icon.png"));
     }
 
     public static void main(String[] args) {
