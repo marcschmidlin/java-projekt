@@ -11,12 +11,8 @@ module com.example.javaprojekt226b {
     requires eu.hansolo.tilesfx;
     requires javafx.graphics;
 
-    opens com.example.javaprojekt226b to javafx.fxml;
-    exports com.example.javaprojekt226b;
     exports ui.login;
     opens ui.login to javafx.fxml;
-    exports start;
-    opens start to javafx.fxml;
     exports ui.main;
     opens ui.main to javafx.fxml;
 }
