@@ -10,6 +10,7 @@ module com.example.javaprojekt226b {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires javafx.graphics;
+    requires java.sql;
 
     exports ui.login;
     opens ui.login to javafx.fxml;
