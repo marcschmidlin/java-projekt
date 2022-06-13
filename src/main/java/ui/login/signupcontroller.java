@@ -12,14 +12,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class logincontroller {
-    @FXML
-    private Label welcomeText;
-    @FXML
-    private Button login;
+public class signupcontroller {
+
 
     @FXML
-    public void LoginButtonPushed(ActionEvent event) throws IOException {
+    public void SignupButtonPushed(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("226bgui.fxml"));
         Scene tableViewScene = new Scene(tableViewParent, 1000, 600);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -28,8 +25,8 @@ public class logincontroller {
     }
 
     @FXML
-    public void Signuppushed(ActionEvent event) throws IOException {
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("signupgui.fxml"));
+    public void Loginpushed(ActionEvent event) throws IOException {
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("logingui.fxml"));
         Scene tableViewScene = new Scene(tableViewParent, 700, 500);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(tableViewScene);

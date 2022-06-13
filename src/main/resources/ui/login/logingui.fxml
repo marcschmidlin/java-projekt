@@ -48,7 +48,7 @@
                   <Font name="Calibri Bold" size="19.0" />
                </font>
             </Button>
-            <Hyperlink layoutX="194.0" layoutY="420.0" text="Sign up now!">
+            <Hyperlink layoutX="194.0" layoutY="420.0" onAction="#Signuppushed" text="Sign up now!">
                <font>
                   <Font name="Calibri" size="13.0" />
                </font>
