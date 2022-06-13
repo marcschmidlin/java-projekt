@@ -17,7 +17,7 @@ public class signupcontroller {
 
     @FXML
     public void SignupButtonPushed(ActionEvent event) throws IOException {
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("226bgui.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("overview.fxml"));
         Scene tableViewScene = new Scene(tableViewParent, 1000, 600);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(tableViewScene);
