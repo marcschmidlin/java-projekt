@@ -45,6 +45,7 @@ public class logincontroller {
     public void Signuppushed(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/login/signupgui.fxml"));
         Scene tableViewScene = new Scene(tableViewParent, 700, 500);
+
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(tableViewScene);
         window.show();
