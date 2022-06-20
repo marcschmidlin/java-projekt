@@ -10,8 +10,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import logic.loginlogic;
 
 import java.io.IOException;
+import java.util.EventObject;
 
 public class logincontroller {
     @FXML
@@ -19,35 +21,25 @@ public class logincontroller {
     @FXML
     private Button login;
     @FXML
-    private TextField username;
+    public TextField username;
     @FXML
-    private TextField password;
+    public TextField password;
 
 
-    @FXML
+    loginlogic loginlogic = new loginlogic();
+
     public void LoginButtonPushed(ActionEvent event) throws IOException {
-        checkLogin(event);
-        // Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/main/overview.fxml"));
-        //Scene tableViewScene = new Scene(tableViewParent, 1000, 600);
-        //Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        //window.setScene(tableViewScene);
-        //window.show();
 
-
-    }
-
-    private void checkLogin(ActionEvent event) throws IOException {
-        if (username.getText().toString().equals("javacoding") && password.getText().toString().equals("123")) {
+         boolean schalter = loginlogic.checkLogin1(username.getText(), password.getText());
+        if (schalter == true){
             Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/main/overview.fxml"));
             Scene tableViewScene = new Scene(tableViewParent, 1000, 600);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(tableViewScene);
             window.show();
-
-            //m.changeScene("afterLogin.fxml");
         }
-    }
 
+    }
 
     @FXML
     public void Signuppushed(ActionEvent event) throws IOException {

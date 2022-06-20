@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.login.logincontroller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.login.logincontroller">
    <left>
       <AnchorPane prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: #AEBD38;" BorderPane.alignment="CENTER">
          <children>
@@ -41,8 +41,8 @@
    <right>
       <AnchorPane prefHeight="500.0" prefWidth="350.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="115.0" layoutY="202.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #AEBD38; -fx-border-width: 0px 0px 2px 0px;" />
-            <PasswordField layoutX="115.0" layoutY="255.0" promptText="Passwort" style="-fx-background-color: transparent; -fx-border-color: #AEBD38; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="username" layoutX="115.0" layoutY="202.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #AEBD38; -fx-border-width: 0px 0px 2px 0px;" />
+            <PasswordField fx:id="password" layoutX="115.0" layoutY="255.0" promptText="Passwort" style="-fx-background-color: transparent; -fx-border-color: #AEBD38; -fx-border-width: 0px 0px 2px 0px;" />
             <Button layoutX="146.0" layoutY="334.0" mnemonicParsing="false" onAction="#LoginButtonPushed" prefHeight="34.0" prefWidth="86.0" style="-fx-background-color: #AEBD38;" text="Login" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="19.0" />
