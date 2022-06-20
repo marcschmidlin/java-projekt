@@ -1,8 +1,6 @@
 package logic;
 
-import javafx.fxml.FXMLLoader;
-
-public class mainlogic {
+public class Mainlogic {
     public void dialogobject(){
 
 

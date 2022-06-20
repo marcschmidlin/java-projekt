@@ -10,12 +10,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import logic.loginlogic;
+import logic.Loginlogic;
 
 import java.io.IOException;
-import java.util.EventObject;
 
-public class logincontroller {
+public class Logincontroller {
     @FXML
     private Label welcomeText;
     @FXML
@@ -26,11 +25,11 @@ public class logincontroller {
     public TextField password;
 
 
-    loginlogic loginlogic = new loginlogic();
+    Loginlogic loginlogic = new Loginlogic();
 
     public void LoginButtonPushed(ActionEvent event) throws IOException {
 
-        boolean schalter = loginlogic.checkLogin1(username.getText(), password.getText());
+        boolean schalter = loginlogic.checkLogin(username.getText(), password.getText());
         if (schalter == true){
             Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/main/overview.fxml"));
             Scene tableViewScene = new Scene(tableViewParent, 1000, 600);

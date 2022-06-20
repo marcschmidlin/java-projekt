@@ -1,6 +1,6 @@
 package entity;
 
-public class objectshop extends object {
+public class Objectshop extends Object {
     private String objectaddress;
 
     public  double getPrice() {
