@@ -1,6 +1,6 @@
 package entity;
 
-public class objectonline extends object {
+public class Objectonline extends Object {
     private String objectlink;
 
     //getter setter Price

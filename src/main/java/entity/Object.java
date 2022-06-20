@@ -1,6 +1,6 @@
 package entity;
 
-public abstract class object {
+public abstract class Object {
     protected String objectname, objectdescription;
     protected int priority;
     protected double price;
