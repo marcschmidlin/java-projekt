@@ -43,6 +43,7 @@ public class logincontroller {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(tableViewScene);
         window.show();
+
             //m.changeScene("afterLogin.fxml");
         }
     }
