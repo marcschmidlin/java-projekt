@@ -43,7 +43,11 @@
          <children>
             <TextField fx:id="username" layoutX="115.0" layoutY="202.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #AEBD38; -fx-border-width: 0px 0px 2px 0px;" />
             <PasswordField fx:id="password" layoutX="115.0" layoutY="255.0" promptText="Passwort" style="-fx-background-color: transparent; -fx-border-color: #AEBD38; -fx-border-width: 0px 0px 2px 0px;" />
+
             <Button layoutX="146.0" layoutY="334.0" mnemonicParsing="false" onAction="#LoginButtonPushed" prefHeight="34.0" prefWidth="86.0" style="-fx-background-color: #AEBD38;" text="Login" textAlignment="CENTER" textFill="WHITE">
+
+           
+
                <font>
                   <Font name="Calibri Bold" size="19.0" />
                </font>

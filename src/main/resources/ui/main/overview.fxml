@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.main.overviewcontroller">
    <left>
       <AnchorPane prefHeight="528.8" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
@@ -28,7 +28,7 @@
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </Button>
-            <ListView layoutY="28.0" prefHeight="450.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <ListView fx:id="lsvProjects" layoutY="28.0" prefHeight="450.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             <Label layoutX="63.0" text="Project" textFill="#aebd38">
                <font>
                   <Font name="Calibri Bold" size="24.0" />
@@ -41,7 +41,7 @@
       <AnchorPane maxHeight="536.0" maxWidth="402.0" prefHeight="520.0" prefWidth="402.0" style="-fx-background-color: white; -fx-border-width: 0 1 0 1; -fx-border-color: #cccccc;" BorderPane.alignment="CENTER">
          <children>
             <ScrollPane layoutY="28.0" prefHeight="450.0" prefWidth="400.0" />
-            <Button layoutX="127.0" layoutY="490.0" mnemonicParsing="false" prefWidth="62.4" style="-fx-background-color: #AEBD38;" text="New" textFill="WHITE">
+            <Button layoutX="127.0" layoutY="490.0" mnemonicParsing="false" onAction="#onObjectNewClick" prefWidth="62.4" style="-fx-background-color: #AEBD38;" text="New" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
@@ -75,12 +75,12 @@
         <menus>
           <Menu mnemonicParsing="false" text="Account">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#onCloseClick" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#onCloseClick" text="About" />
             </items>
           </Menu>
         </menus>
