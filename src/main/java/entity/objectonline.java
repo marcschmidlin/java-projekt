@@ -3,37 +3,47 @@ package entity;
 public class objectonline extends object {
     private String objectlink;
 
-    public  double getPrice() {
+    //getter setter Price
+    public double getPrice() {
         return price;
     }
-    public  void setPrice(double price) {
+
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public  int getPriority() {
+    //getter setter Priority
+    public int getPriority() {
         return priority;
     }
-    public  void setPriority(int priority) {
+
+    public void setPriority(int priority) {
         this.priority = priority;
     }
 
+    //getter setter Description
     public String getObjectdescription() {
         return objectdescription;
     }
-    public  void setObjectdescription(String objectdescription) {
+
+    public void setObjectdescription(String objectdescription) {
         this.objectdescription = objectdescription;
     }
 
+    //getter setter Objectname
     public String getObjectname() {
         return objectname;
     }
-    public  void setObjectname(String objectname) {
+
+    public void setObjectname(String objectname) {
         this.objectname = objectname;
     }
 
+    //getter setter Objectlink
     public String getObjectlink() {
         return objectlink;
     }
+
     public void setObjectlink(String objectlink) {
         this.objectlink = objectlink;
     }
