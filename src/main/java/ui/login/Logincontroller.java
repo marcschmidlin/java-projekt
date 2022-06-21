@@ -1,22 +1,23 @@
 package ui.login;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import logic.Loginlogic;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class Logincontroller {
-    @FXML
-    private Label welcomeText;
     @FXML
     private Button login;
     @FXML
@@ -37,6 +38,18 @@ public class Logincontroller {
             window.setScene(tableViewScene);
             window.show();
         }
+        else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Error");
+            alert.setHeaderText("The password or username you entered is incorrect!");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("/icon.png"));
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK) {
+            }
+        }
+
+
 
     }
 
@@ -48,4 +61,5 @@ public class Logincontroller {
         window.setScene(tableViewScene);
         window.show();
     }
+
 }
