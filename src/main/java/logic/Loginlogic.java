@@ -1,17 +1,17 @@
 package logic;
 
+import entity.User;
+import entity.UserCreate;
 import entity.UserReader;
 
 import java.io.IOException;
 
 public class Loginlogic {
 
-    public boolean schalter = false;
-
     private UserReader userReader;
+    private UserCreate userCreate = new UserCreate();
 
     public Loginlogic() {
-
     }
 
     public boolean checkLogin(String username, String password) throws IOException {
@@ -24,9 +24,10 @@ public class Loginlogic {
         }
     }
 
-
-
-
+    public void checkSignUp(String vorname, String nachname, String username, String email, String passwort) throws IOException {
+        User user = new User(vorname, nachname, username, email, passwort);
+        userCreate.createUser(user);
+    }
 
 }
 

@@ -15,10 +15,10 @@ public class UserReader {
 
         user = new User();
 
-        File datei = new File("src/main/java/entity/user.txt");
+        File takeuser = new File("src/main/java/entity/TakeUser.txt");
         Scanner scan = null;
         try {
-            scan = new Scanner(datei);
+            scan = new Scanner(takeuser);
         } catch (FileNotFoundException e) {
             System.out.println("File Not Found");
         }
@@ -28,7 +28,6 @@ public class UserReader {
             user.username = scan.next();
             user.email = scan.next();
             user.password = scan.next();
-            Loginlogic loginlogic = new Loginlogic();
         }
     }
 
