@@ -17,7 +17,7 @@ public class UserCreate {
                 writer.write(user.getLastname()+" ");
                 writer.write(user.getUsername()+" ");
                 writer.write(user.getEmail()+" ");
-                writer.write(user.getPassword()+" ");
+                writer.write(user.getPassword()+" \n");
 
                 writer.flush();
                 writer.close();
