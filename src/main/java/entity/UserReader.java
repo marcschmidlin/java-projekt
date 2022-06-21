@@ -9,11 +9,9 @@ import java.util.Scanner;
 
 public class UserReader {
 
-    User user;
+    private ArrayList<User> users = new ArrayList<>();
 
     public UserReader() {
-
-        user = new User();
 
         File takeuser = new File("src/main/java/entity/TakeUser.txt");
         Scanner scan = null;
@@ -22,16 +20,22 @@ public class UserReader {
         } catch (FileNotFoundException e) {
             System.out.println("File Not Found");
         }
-        while (scan.hasNext()) {
-            user.firstname = scan.next();
-            user.lastname = scan.next();
-            user.username = scan.next();
-            user.email = scan.next();
-            user.password = scan.next();
+
+        while (scan.hasNextLine()) {
+            while (scan.hasNext()) {
+                String firstname = scan.next();
+                String lastname = scan.next();
+                String username = scan.next();
+                String email = scan.next();
+                String password = scan.next();
+
+                users.add(new User(firstname,lastname,username,email,password));
+            }
         }
+
     }
 
-    public User getUser() {
-        return user;
+    public ArrayList<User> getUsers() {
+        return users;
     }
 }

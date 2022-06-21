@@ -17,11 +17,12 @@ public class Loginlogic {
     public boolean checkLogin(String username, String password) throws IOException {
         userReader = new UserReader();
 
-        if (username.equals(userReader.getUser().getUsername())  && password.equals(userReader.getUser().getPassword())) {
-            return true;
-        } else {
-            return false;
+        for (User user : userReader.getUsers()) {
+            if (username.equals(user.getUsername())  && password.equals(user.getPassword())) {
+                return true;
+            }
         }
+        return false;
     }
 
     public void checkSignUp(String vorname, String nachname, String username, String email, String passwort) throws IOException {

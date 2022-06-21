@@ -34,14 +34,24 @@ public class Signupcontroller {
 
     @FXML
     public void SignupButtonPushed(ActionEvent event) throws IOException {
-        loginlogic.checkSignUp(vorname.getText(), nachname.getText(), username.getText(), email.getText(), password.getText());
+        if (vorname.getText().equals(null) || nachname.getText().equals(null) || username.getText().equals(null) || email.getText().equals(null) || password.getText().equals(null)) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Error");
+            alert.setHeaderText("The password or username you entered is incorrect!");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("/icon.png"));
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK) {
+            }
+        } else {
+            loginlogic.checkSignUp(vorname.getText(), nachname.getText(), username.getText(), email.getText(), password.getText());
             Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/main/overview.fxml"));
             Scene tableViewScene = new Scene(tableViewParent, 1000, 600);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(tableViewScene);
             window.show();
         }
-
+    }
 
     @FXML
     public void Loginpushed(ActionEvent event) throws IOException {
