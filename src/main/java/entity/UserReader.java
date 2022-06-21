@@ -28,7 +28,6 @@ public class UserReader {
             user.username = scan.next();
             user.email = scan.next();
             user.password = scan.next();
-            Loginlogic loginlogic = new Loginlogic();
         }
     }
 
