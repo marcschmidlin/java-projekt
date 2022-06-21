@@ -15,7 +15,7 @@ public class UserReader {
 
         user = new User();
 
-        File datei = new File("src/main/java/entity/user.txt");
+        File datei = new File("src/main/java/entity/TakeUser.txt");
         Scanner scan = null;
         try {
             scan = new Scanner(datei);
