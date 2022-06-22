@@ -31,6 +31,37 @@ public class Logincontroller {
     public void LoginButtonPushed(ActionEvent event) throws IOException {
 
         boolean schalter = loginlogic.checkLogin(username.getText(), password.getText());
+        boolean nopassword = loginlogic.nopassword(password.getText());
+        boolean nousername = loginlogic.nousername(username.getText());
+
+        System.out.println(schalter);
+        System.out.println(nopassword);
+        System.out.println(password.getText());
+        System.out.println(nousername);
+        System.out.println(username.getText());
+
+        if (nousername == true) {
+            Alert alertnoun = new Alert(Alert.AlertType.WARNING);
+            alertnoun.setTitle("Error");
+            alertnoun.setHeaderText("No username entered!");
+            Stage stage = (Stage) alertnoun.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("/icon.png"));
+            Optional<ButtonType> result = alertnoun.showAndWait();
+            System.out.println("No username entered!");
+            if (result.get() == ButtonType.OK) {
+            }
+        }
+        if (nopassword == true) {
+            Alert alertnopw = new Alert(Alert.AlertType.WARNING);
+            alertnopw.setTitle("Error");
+            alertnopw.setHeaderText("No password entered!");
+            Stage stage = (Stage) alertnopw.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("/icon.png"));
+            Optional<ButtonType> result = alertnopw.showAndWait();
+            System.out.println("No password entered!");
+            if (result.get() == ButtonType.OK) {
+            }
+        }
         if (schalter == true){
             Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/main/overview.fxml"));
             Scene tableViewScene = new Scene(tableViewParent, 1000, 600);
@@ -38,7 +69,10 @@ public class Logincontroller {
             window.setScene(tableViewScene);
             window.show();
         }
-        else {
+
+
+
+        if (nousername == false && nopassword == false && schalter == false) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText("The password or username you entered is incorrect!");
