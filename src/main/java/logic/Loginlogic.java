@@ -24,6 +24,20 @@ public class Loginlogic {
         }
         return false;
     }
+    public boolean nopassword(String password) throws IOException {
+        if (password.equals("")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public boolean nousername(String username) throws IOException {
+        if (username.equals("")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public void checkSignUp(String vorname, String nachname, String username, String email, String passwort) throws IOException {
         User user = new User(vorname, nachname, username, email, passwort);

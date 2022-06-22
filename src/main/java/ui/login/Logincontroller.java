@@ -31,14 +31,40 @@ public class Logincontroller {
     public void LoginButtonPushed(ActionEvent event) throws IOException {
 
         boolean schalter = loginlogic.checkLogin(username.getText(), password.getText());
-        if (schalter == true){
+        boolean nousername = loginlogic.nousername(username.getText());
+        boolean nopassword = loginlogic.nopassword(password.getText());
+
+        if (nousername == true) {
+            Alert alertnoun = new Alert(Alert.AlertType.WARNING);
+            alertnoun.setTitle("Error");
+            alertnoun.setHeaderText("No Username entered!");
+            Stage stage = (Stage) alertnoun.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("/icon.png"));
+            Optional<ButtonType> result = alertnoun.showAndWait();
+            System.out.println("No username entered!");
+            if (result.get() == ButtonType.OK) {
+            }
+        }
+        if (nopassword == true) {
+            Alert alertnopw = new Alert(Alert.AlertType.WARNING);
+            alertnopw.setTitle("Error");
+            alertnopw.setHeaderText("No Password entered!");
+            Stage stage = (Stage) alertnopw.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("/icon.png"));
+            Optional<ButtonType> result = alertnopw.showAndWait();
+            System.out.println("No password entered!");
+            if (result.get() == ButtonType.OK) {
+            }
+        }
+
+        if (schalter == true && nopassword == false && nousername == false){
             Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/main/overview.fxml"));
             Scene tableViewScene = new Scene(tableViewParent, 1000, 600);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(tableViewScene);
             window.show();
         }
-        else {
+        if(schalter == false && nopassword == false && nousername == false) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText("The password or username you entered is incorrect!");
