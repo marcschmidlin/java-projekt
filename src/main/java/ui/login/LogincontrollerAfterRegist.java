@@ -1,7 +1,6 @@
 package ui.login;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -9,16 +8,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import logic.Loginlogic;
 
 import java.io.IOException;
 import java.util.Optional;
 
-public class Logincontroller {
+public class LogincontrollerAfterRegist {
     @FXML
     private Button login;
     @FXML
@@ -36,9 +32,10 @@ public class Logincontroller {
         boolean schalter = loginlogic.checkLogin(username.getText(), password.getText());
         boolean nousername = loginlogic.nousername(username.getText());
         boolean nopassword = loginlogic.nopassword(password.getText());
-
+        
 
         if (nousername == true) {
+            registrationSucc.setStyle("-fx-text-fill: #f8f4f4;");
             Alert alertnoun = new Alert(Alert.AlertType.WARNING);
             alertnoun.setTitle("Error");
             alertnoun.setHeaderText("No Username entered!");
@@ -50,6 +47,7 @@ public class Logincontroller {
             }
         }
         if (nopassword == true) {
+            registrationSucc.setStyle("-fx-text-fill: #f8f4f4;");
             Alert alertnopw = new Alert(Alert.AlertType.WARNING);
             alertnopw.setTitle("Error");
             alertnopw.setHeaderText("No Password entered!");
@@ -69,6 +67,7 @@ public class Logincontroller {
             window.show();
         }
         if(schalter == false && nopassword == false && nousername == false) {
+            registrationSucc.setStyle("-fx-text-fill: #f8f4f4;");
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText("The password or username you entered is incorrect!");
