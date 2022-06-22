@@ -3,21 +3,26 @@ package ui.login;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import logic.Loginlogic;
 
+
 import java.io.IOException;
+import java.net.URL;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 
-public class Signupcontroller {
+public class Signupcontroller implements Initializable {
 
     @FXML
     public TextField vorname;
@@ -29,8 +34,11 @@ public class Signupcontroller {
     public TextField email;
     @FXML
     public TextField password;
+    @FXML
+    public Button register;
 
     Loginlogic loginlogic = new Loginlogic();
+
 
     @FXML
     public void SignupButtonPushed(ActionEvent event) throws IOException {
@@ -42,7 +50,14 @@ public class Signupcontroller {
             window.show();
         }
 
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        this.register.setDisable(true);
+    }
 
+    public void buttonactivater (){
+        this.register.setDisable(false);
+    }
 
     @FXML
     public void Loginpushed(ActionEvent event) throws IOException {

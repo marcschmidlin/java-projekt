@@ -16,4 +16,6 @@ public abstract class Object {
 
     public abstract String getObjectname();
     public abstract void setObjectname(String objectname);
+
+
 }

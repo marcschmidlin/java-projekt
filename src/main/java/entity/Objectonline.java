@@ -3,6 +3,14 @@ package entity;
 public class Objectonline extends Object {
     private String objectlink;
 
+    public Objectonline(String objectname, String objectdescripion, String objectlink, double price, int priority) {
+       this.objectname = objectname;
+       this.objectdescription = objectdescripion;
+       this.objectlink = objectlink;
+       this.price = price;
+       this.priority = priority;
+    }
+
     //getter setter Price
     public double getPrice() {
         return price;
@@ -47,4 +55,5 @@ public class Objectonline extends Object {
     public void setObjectlink(String objectlink) {
         this.objectlink = objectlink;
     }
+
 }

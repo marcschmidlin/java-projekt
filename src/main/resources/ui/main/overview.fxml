@@ -18,7 +18,7 @@
       <AnchorPane prefHeight="528.8" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
             <ScrollPane layoutY="28.0" prefHeight="422.0" prefWidth="200.0" />
-            <Button layoutX="27.0" layoutY="490.0" mnemonicParsing="false" prefWidth="62.4" style="-fx-background-color: #AEBD38;" text="New" textFill="WHITE">
+            <Button layoutX="27.0" layoutY="490.0" mnemonicParsing="false" onAction="#onProjectNewClick" prefWidth="62.4" style="-fx-background-color: #AEBD38;" text="New" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
@@ -51,7 +51,7 @@
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </Button>
-            <ListView layoutX="3.0" layoutY="28.0" prefHeight="451.0" prefWidth="398.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0" />
+            <ListView layoutX="2.0" layoutY="28.0" prefHeight="450.0" prefWidth="400.0" AnchorPane.bottomAnchor="52.0" AnchorPane.leftAnchor="0.0" />
             <Label layoutX="161.0" text="Objects" textFill="#aebd38">
                <font>
                   <Font name="Calibri Bold" size="24.0" />
@@ -75,7 +75,8 @@
         <menus>
           <Menu mnemonicParsing="false" text="Account">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#onCloseClick" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#onCloseClick" />
+                  <MenuItem mnemonicParsing="false" onAction="#onCloseClick" text="LogOut" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
