@@ -1,5 +1,10 @@
 package logic;
 
+/*
+Auto: Marc Schmidlin und Flavio Schaffer
+Diese Klasse implementiert die Methoden zur logigschicht die in dem Main programm stadtfindet.
+ */
+
 import data.Dataholding;
 import entity.Project;
 

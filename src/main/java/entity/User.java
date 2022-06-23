@@ -1,5 +1,9 @@
 package entity;
 
+/*
+Autor Marc Schmidlin und Flavio Schaffer
+Getter Setter und Konstruktor für User
+ */
 public class User {
 
     public User(String firstname, String lastname, String username, String email, String password) {

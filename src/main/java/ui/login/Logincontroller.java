@@ -1,4 +1,8 @@
 package ui.login;
+/*
+Autor: Marc Schmidlin und Flavio Schaffer
+Diese Klasse dient zur Loginfunktion. Es leitet die Parameter zur Loginschicht weiter.
+*/
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -31,13 +35,18 @@ public class Logincontroller {
 
     Loginlogic loginlogic = new Loginlogic();
 
+      /*
+    Methode für Login wird aufgeruden, wenn der Loginbutten geklickt wird
+     */
+
     public void LoginButtonPushed(ActionEvent event) throws IOException {
 
+        //Boolean der abgefragt wird mit übergabeparameter. Aufruf in loginlogic
         boolean schalter = loginlogic.checkLogin(username.getText(), password.getText());
         boolean nousername = loginlogic.nousername(username.getText());
         boolean nopassword = loginlogic.nopassword(password.getText());
 
-
+        //Falls kein Userame eingegeben wird, wird ein Gui angezeigt
         if (nousername == true) {
             Alert alertnoun = new Alert(Alert.AlertType.WARNING);
             alertnoun.setTitle("Error");
@@ -49,6 +58,7 @@ public class Logincontroller {
             if (result.get() == ButtonType.OK) {
             }
         }
+        //Falls kein password eingegeben wir,d wird ein Gui angezeigt
         if (nopassword == true) {
             Alert alertnopw = new Alert(Alert.AlertType.WARNING);
             alertnopw.setTitle("Error");
@@ -60,7 +70,7 @@ public class Logincontroller {
             if (result.get() == ButtonType.OK) {
             }
         }
-
+        //Falls die eingaben nicht richtig sind
         if (schalter == true && nopassword == false && nousername == false){
             Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/main/overview.fxml"));
             Scene tableViewScene = new Scene(tableViewParent, 1000, 600);
@@ -68,6 +78,8 @@ public class Logincontroller {
             window.setScene(tableViewScene);
             window.show();
         }
+
+        //Falls nichts eingetragen wurde
         if(schalter == false && nopassword == false && nousername == false) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
@@ -82,7 +94,10 @@ public class Logincontroller {
 
 
     }
-
+    /*
+    Methode die aufgerufen wird, wenn der Signup butten geklickt wird.
+    Gibt vorgehen nach gedrücktem Button vor. Aufruf von signupgui.
+    */
     @FXML
     public void Signuppushed(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/login/signupgui.fxml"));

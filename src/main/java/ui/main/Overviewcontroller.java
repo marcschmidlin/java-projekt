@@ -1,4 +1,9 @@
 package ui.main;
+/*
+Autor: Marc Schmidlin und Flavio Schaffer
+In dieser Klasse ist der Controller für das Hauptprogramm definiert. Es werden hierbei die verschiedenen Parameter für
+die Logicschicht weitergegeben und erforderliche Methoden aufgerufen. Übernimmt die GUI Schicht für die Hauptapülikation.
+ */
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +28,9 @@ public class Overviewcontroller implements Initializable {
     @FXML
     private ListView lsvProjects;
 
+    /*
+    Methode für das Hinzufügen von Ojekten. Methoden ladet Grafische oberfläche, übergibt Parameter und  ruft entspechende Loficmethoden auf.
+     */
     @FXML
     protected void onObjectNewClick() {
         try {
@@ -45,6 +53,9 @@ public class Overviewcontroller implements Initializable {
             e.printStackTrace();
         }
     }
+    /*
+   Methode für das Hinzufügen von Projekten. Methoden ladet Grafische oberfläche, übergibt Parameter und  ruft entspechende Loficmethoden auf.
+    */
     @FXML
     protected void onProjectNewClick() {
         try {
@@ -74,6 +85,9 @@ public class Overviewcontroller implements Initializable {
 
     }
 
+    /*
+   Methode um mit einem Button zurück zum Login zu kommen. logingui.fxml wird augerufen.
+    */
     @FXML
     public void onCloseClick(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/login/logingui.fxml"));

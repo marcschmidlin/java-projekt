@@ -1,11 +1,17 @@
 package entity;
 
+/*
+Autor Marc Schmidlin und Flavio Schaffer
+Diese Klasse dient zum erstellen eines Benutzers. Benutzer wird in Textfile geschrieben
+ */
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class UserCreate {
 
+    //Nimmt die Daten, die von der Logicschicht weitergegeben wurden und schreibt diese in TakeUser.txt
     public void createUser(User user){
 
         File newuser = new File("src/main/java/entity/TakeUser.txt");

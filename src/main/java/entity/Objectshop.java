@@ -1,5 +1,10 @@
 package entity;
 
+/*
+Autor Marc Schmidlin und Flavio Schaffer
+Gibt werte von den Objekten zurück
+ */
+
 public class Objectshop extends Object {
     private String objectaddress;
 

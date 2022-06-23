@@ -1,5 +1,10 @@
 package entity;
 
+/*
+Autor Flavio Schaffer
+Getter Setter und Konstruktor für die Objekte
+ */
+
 public class Objectonline extends Object {
     private String objectlink;
 

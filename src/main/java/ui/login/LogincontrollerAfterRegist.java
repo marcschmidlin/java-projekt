@@ -1,5 +1,10 @@
 package ui.login;
 
+/*
+Autor: Marc Schmidlin und Flavio Schaffer
+Diese Klasse dient dient zur Loginfunktion, wenn man einen neuen Account angelegt hat. (Nach Signup)
+ */
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +20,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class LogincontrollerAfterRegist {
+    //Instanzierung und Dekleration
     @FXML
     private Button login;
     @FXML
@@ -27,13 +33,19 @@ public class LogincontrollerAfterRegist {
 
     Loginlogic loginlogic = new Loginlogic();
 
+    /*
+    Methode für Login wird aufgeruden
+     */
+
     public void LoginButtonPushed(ActionEvent event) throws IOException {
 
+        //Boolean der abgefragt wird mit übergabeparameter. Aufruf in loginlogic
         boolean schalter = loginlogic.checkLogin(username.getText(), password.getText());
         boolean nousername = loginlogic.nousername(username.getText());
         boolean nopassword = loginlogic.nopassword(password.getText());
         
 
+        //Falls kein Userame eingegeben wird, wird ein Gui angezeigt
         if (nousername == true) {
             registrationSucc.setStyle("-fx-text-fill: #f8f4f4;");
             Alert alertnoun = new Alert(Alert.AlertType.WARNING);
@@ -46,6 +58,8 @@ public class LogincontrollerAfterRegist {
             if (result.get() == ButtonType.OK) {
             }
         }
+
+        //Falls kein password eingegeben wir,d wird ein Gui angezeigt
         if (nopassword == true) {
             registrationSucc.setStyle("-fx-text-fill: #f8f4f4;");
             Alert alertnopw = new Alert(Alert.AlertType.WARNING);
@@ -59,6 +73,7 @@ public class LogincontrollerAfterRegist {
             }
         }
 
+        //Falls die eingaben nicht richtig sind
         if (schalter == true && nopassword == false && nousername == false){
             Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/main/overview.fxml"));
             Scene tableViewScene = new Scene(tableViewParent, 1000, 600);
@@ -66,6 +81,7 @@ public class LogincontrollerAfterRegist {
             window.setScene(tableViewScene);
             window.show();
         }
+        //Falls nichts eingetragen wurde
         if(schalter == false && nopassword == false && nousername == false) {
             registrationSucc.setStyle("-fx-text-fill: #f8f4f4;");
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -82,8 +98,13 @@ public class LogincontrollerAfterRegist {
 
     }
 
+    /*
+   Methode die aufgerufen wird, wenn der Signup butten geklickt wird.
+   Gibt vorgehen nach gedrücktem Button vor. Aufruf von signupgui.
+    */
     @FXML
     public void Signuppushed(ActionEvent event) throws IOException {
+        //signupgui.fxml wir aufgeruden
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/login/signupgui.fxml"));
         Scene tableViewScene = new Scene(tableViewParent, 700, 500);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

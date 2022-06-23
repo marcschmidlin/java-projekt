@@ -1,4 +1,8 @@
 package entity;
+/*
+Autor Flavio Schaffer
+Getter Setter und Konstruktor für die Objekte
+ */
 
 public abstract class Object {
     protected String objectname, objectdescription;

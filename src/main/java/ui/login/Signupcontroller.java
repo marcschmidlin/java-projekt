@@ -1,5 +1,11 @@
 package ui.login;
 
+/*
+Autor: Marc Schmidlin und Flavio Schaffer
+Diese Klassen uebernimmt die Steuerung des Signups. Methoden für das Weitergeben der Daten und hinzufügen werden hier weitergegeben.
+Kontrolliert über Signup
+ */
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +29,7 @@ import java.util.ResourceBundle;
 
 
 public class Signupcontroller implements Initializable {
-
+    //Festlegen von Instanzen
     @FXML
     public TextField vorname;
     @FXML
@@ -39,16 +45,22 @@ public class Signupcontroller implements Initializable {
 
     Loginlogic loginlogic = new Loginlogic();
 
-
+    /*
+    Methode die aufgerufen wird, wenn der Signup butten geklickt wird.
+    Gibt vorgehen nach gedrücktem Button vor
+     */
     @FXML
     public void SignupButtonPushed(ActionEvent event) throws IOException {
+            //Aufruf von loginlogic mit Parameter vorname,nachname,username,email und passwort
             loginlogic.checkSignUp(vorname.getText(), nachname.getText(), username.getText(), email.getText(), password.getText());
+            //Ladet loginguiAfterRegistration.fxml
             Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/login/loginguiAfterRegist.fxml"));
             Scene tableViewScene = new Scene(tableViewParent, 700, 500);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(tableViewScene);
             window.show();
         }
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -59,6 +71,10 @@ public class Signupcontroller implements Initializable {
         this.register.setDisable(false);
     }
 
+    /*
+    Methode die aufgerufen wird, wenn der Loginbutton geklickt wird.
+    Aufruf von logingui.fxml wird getätigt
+     */
     @FXML
     public void Loginpushed(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("/ui/login/logingui.fxml"));
