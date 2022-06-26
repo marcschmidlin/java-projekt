@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fem.ui.login.LogincontrollerAfterRegist">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fem.ui.LoginController">
    <left>
       <AnchorPane prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: #AEBD38;" BorderPane.alignment="CENTER">
          <children>
@@ -32,7 +32,7 @@
             </Label>
             <ImageView fitHeight="105.0" fitWidth="89.0" layoutX="131.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../icon.png" />
+                  <Image url="@icon.png" />
                </image>
             </ImageView>
          </children>
@@ -44,7 +44,7 @@
             <TextField fx:id="username" layoutX="115.0" layoutY="202.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #AEBD38; -fx-border-width: 0px 0px 2px 0px;" />
             <PasswordField fx:id="password" layoutX="115.0" layoutY="255.0" promptText="Passwort" style="-fx-background-color: transparent; -fx-border-color: #AEBD38; -fx-border-width: 0px 0px 2px 0px;" />
 
-            <Button fx:id="login" layoutX="146.0" layoutY="334.0" mnemonicParsing="false" onAction="#LoginButtonPushed" prefHeight="34.0" prefWidth="86.0" style="-fx-background-color: #AEBD38;" text="Login" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="login" layoutX="146.0" layoutY="334.0" mnemonicParsing="false" onAction="#loginButtonPushed" prefHeight="34.0" prefWidth="86.0" style="-fx-background-color: #AEBD38;" text="Login" textAlignment="CENTER" textFill="WHITE">
 
            
 
@@ -52,7 +52,7 @@
                   <Font name="Calibri Bold" size="19.0" />
                </font>
             </Button>
-            <Hyperlink layoutX="194.0" layoutY="420.0" onAction="#Signuppushed" text="Sign up now!">
+            <Hyperlink layoutX="194.0" layoutY="420.0" onAction="#signUpPushed" text="Sign up now!">
                <font>
                   <Font name="Calibri" size="13.0" />
                </font>
@@ -64,7 +64,7 @@
             </Label>
             <ImageView fitHeight="75.0" fitWidth="66.0" layoutX="142.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../users-icon.png" />
+                  <Image url="@users-icon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="35.0" fitWidth="40.0" layoutX="59.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
@@ -77,11 +77,6 @@
                   <Image url="@../../passwort.png" />
                </image>
             </ImageView>
-            <Label fx:id="registrationSucc" layoutX="62.0" layoutY="142.0" text="Registration successful!" textFill="#77ff00">
-               <font>
-                  <Font name="Calibri Bold" size="24.0" />
-               </font>
-            </Label>
          </children>
       </AnchorPane>
    </right>
