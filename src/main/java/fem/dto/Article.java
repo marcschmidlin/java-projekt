@@ -8,11 +8,14 @@ public class Article implements CommaSeparatedValue {
     private String link;
     private String address;
     private String projectName;
+    private String category;
 
     public Article() {
     }
 
-    public Article(String name, String description, Integer priority, Double price, String link, String address, String projectName) {
+
+
+    public Article(String name, String description, Integer priority, Double price, String link, String address, String projectName, String category) {
         this.name = name;
         this.description = description;
         this.priority = priority;
@@ -20,6 +23,7 @@ public class Article implements CommaSeparatedValue {
         this.link = link;
         this.address = address;
         this.projectName = projectName;
+        this.category = category;
     }
 
     public String getAddress() {
@@ -77,6 +81,10 @@ public class Article implements CommaSeparatedValue {
     public void setProjectName(String projectName) {
         this.projectName = projectName;
     }
+
+    public String getCategory() {return category;}
+
+    public void setCategory(String category) {this.category = category;}
 
     @Override
     public String getCommaSeparateValue() {

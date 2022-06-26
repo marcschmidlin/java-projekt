@@ -46,7 +46,7 @@
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </Button>
-            <Button layoutX="327.0" layoutY="490.0" mnemonicParsing="false" style="-fx-background-color: #AEBD38;" text="Delete" textFill="WHITE">
+            <Button layoutX="327.0" layoutY="490.0" mnemonicParsing="false" onAction="#onArticleDeleteClicked" style="-fx-background-color: #AEBD38;" text="Delete" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
@@ -70,13 +70,25 @@
          <children>
             <Label layoutX="22.0" layoutY="38.0" prefHeight="27.0" prefWidth="48.0" text="Name" />
             <Label layoutX="22.0" layoutY="77.0" prefHeight="29.0" prefWidth="107.0" text="Description" />
-            <TextField fx:id="articleName" editable="false" layoutX="174.0" layoutY="39.0" />
-            <TextField fx:id="articleDescription" editable="false" layoutX="174.0" layoutY="79.0" />
-            <Button layoutX="15.0" layoutY="488.0" mnemonicParsing="false" onAction="#onObjectNewClick" prefWidth="62.4" style="-fx-background-color: #AEBD38;" text="Save" textFill="WHITE">
+            <TextField fx:id="articleName" layoutX="174.0" layoutY="39.0" />
+            <TextField fx:id="articleDescription" layoutX="174.0" layoutY="79.0" />
+            <Button layoutX="15.0" layoutY="488.0" mnemonicParsing="false" onAction="#onArticleSaveClicked" prefWidth="62.4" style="-fx-background-color: #AEBD38;" text="Save" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </Button>
+            <Label layoutX="22.0" layoutY="117.0" prefHeight="29.0" prefWidth="107.0" text="Priority" />
+            <TextField fx:id="articlePriority" layoutX="174.0" layoutY="119.0" />
+            <Label layoutX="22.0" layoutY="154.0" prefHeight="29.0" prefWidth="107.0" text="Price" />
+            <Label layoutX="22.0" layoutY="190.0" prefHeight="29.0" prefWidth="107.0" text="Link" />
+            <Label layoutX="22.0" layoutY="228.0" prefHeight="29.0" prefWidth="107.0" text="Address" />
+            <TextField fx:id="articlePrice" layoutX="174.0" layoutY="156.0" />
+            <TextField fx:id="articleLink" layoutX="174.0" layoutY="192.0" />
+            <TextField fx:id="articleAddress" layoutX="174.0" layoutY="230.0" />
+            <Label layoutX="22.0" layoutY="265.0" prefHeight="29.0" prefWidth="107.0" text="Category" />
+            <TextField fx:id="articleCategory" layoutX="174.0" layoutY="267.0" />
+            <Label layoutX="22.0" layoutY="398.0" prefHeight="29.0" prefWidth="107.0" text="Project" />
+            <TextField fx:id="articleProject" layoutX="174.0" layoutY="400.0" />
          </children>
       </AnchorPane>
    </right>
@@ -85,7 +97,6 @@
         <menus>
           <Menu mnemonicParsing="false" text="Account">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#onCloseClick" />
                   <MenuItem mnemonicParsing="false" onAction="#onCloseClick" text="LogOut" />
             </items>
           </Menu>
