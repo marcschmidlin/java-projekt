@@ -1,47 +1,29 @@
 package fem.logic;
 
-import fem.entity.User;
-import fem.entity.UserCreate;
-import fem.entity.UserReader;
+import fem.data.StoreRegistry;
+import fem.dto.User;
 
 import java.io.IOException;
 
-public class Loginlogic {
+public class LoginLogic {
 
-    private UserReader userReader;
-    private UserCreate userCreate = new UserCreate();
+    private final StoreRegistry storeRegistry;
 
-    public Loginlogic() {
+    public LoginLogic()  {
+        storeRegistry = StoreRegistry.getStoreRegistry();
     }
 
     public boolean checkLogin(String username, String password) throws IOException {
-        userReader = new UserReader();
-
-        for (User user : userReader.getUsers()) {
-            if (username.equals(user.getUsername())  && password.equals(user.getPassword())) {
-                return true;
-            }
-        }
-        return false;
-    }
-    public boolean nopassword(String password) throws IOException {
-        if (password.equals("")) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    public boolean nousername(String username) throws IOException {
-        if (username.equals("")) {
-            return true;
-        } else {
-            return false;
-        }
+        return storeRegistry.getUserStore()
+                .getAll()
+                .stream()
+                .filter(user -> user.getUsername().equals(username) && user.getPassword().equals(user.getPassword()))
+                .count() > 0;
     }
 
-    public void checkSignUp(String vorname, String nachname, String username, String email, String passwort) throws IOException {
-        User user = new User(vorname, nachname, username, email, passwort);
-        userCreate.createUser(user);
+    public void signUp(String username, String email, String password) throws IOException {
+        User user = new User(username, email, password);
+        storeRegistry.getUserStore().add(user);
     }
 
 }
