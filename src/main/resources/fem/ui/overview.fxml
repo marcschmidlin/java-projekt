@@ -8,12 +8,12 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fem.ui.main.Overviewcontroller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fem.ui.OverviewController">
    <left>
       <AnchorPane prefHeight="528.8" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
@@ -23,7 +23,7 @@
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </Button>
-            <Button layoutX="110.0" layoutY="490.0" mnemonicParsing="false" style="-fx-background-color: #AEBD38;" text="Delete" textFill="WHITE">
+            <Button layoutX="110.0" layoutY="490.0" mnemonicParsing="false" onAction="#onProjectDeleteClicked" style="-fx-background-color: #AEBD38;" text="Delete" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
@@ -41,22 +41,24 @@
       <AnchorPane maxHeight="536.0" maxWidth="402.0" prefHeight="520.0" prefWidth="402.0" style="-fx-background-color: white; -fx-border-width: 0 1 0 1; -fx-border-color: #cccccc;" BorderPane.alignment="CENTER">
          <children>
             <ScrollPane layoutY="28.0" prefHeight="450.0" prefWidth="400.0" />
-            <Button layoutX="127.0" layoutY="490.0" mnemonicParsing="false" onAction="#onObjectNewClick" prefWidth="62.4" style="-fx-background-color: #AEBD38;" text="New" textFill="WHITE">
+            <Button layoutX="249.0" layoutY="490.0" mnemonicParsing="false" onAction="#onObjectNewClick" prefWidth="62.4" style="-fx-background-color: #AEBD38;" text="New" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </Button>
-            <Button layoutX="210.0" layoutY="490.0" mnemonicParsing="false" style="-fx-background-color: #AEBD38;" text="Delete" textFill="WHITE">
+            <Button layoutX="327.0" layoutY="490.0" mnemonicParsing="false" style="-fx-background-color: #AEBD38;" text="Delete" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </Button>
-            <ListView layoutX="2.0" layoutY="28.0" prefHeight="450.0" prefWidth="400.0" AnchorPane.bottomAnchor="52.0" AnchorPane.leftAnchor="0.0" />
-            <Label layoutX="161.0" text="Objects" textFill="#aebd38">
+            <ListView fx:id="lsvArticles" layoutX="2.0" layoutY="28.0" prefHeight="450.0" prefWidth="400.0" AnchorPane.bottomAnchor="52.0" AnchorPane.leftAnchor="0.0" />
+            <Label layoutX="161.0" text="Articles" textFill="#aebd38">
                <font>
                   <Font name="Calibri Bold" size="24.0" />
                </font>
             </Label>
+            <Label layoutX="8.0" layoutY="493.0" prefHeight="27.0" prefWidth="82.0" text="Total Cost" />
+            <TextField fx:id="totalCost" editable="false" layoutX="73.0" layoutY="492.0" />
          </children>
          <BorderPane.margin>
             <Insets />
@@ -66,7 +68,15 @@
    <right>
       <AnchorPane prefHeight="528.8" prefWidth="400.0" BorderPane.alignment="CENTER">
          <children>
-            <TabPane layoutX="2.0" prefHeight="530.0" prefWidth="400.0" style="-fx-background-color: white; -fx-text-base-color: #AEBD38;" tabClosingPolicy="UNAVAILABLE" />
+            <Label layoutX="22.0" layoutY="38.0" prefHeight="27.0" prefWidth="48.0" text="Name" />
+            <Label layoutX="22.0" layoutY="77.0" prefHeight="29.0" prefWidth="107.0" text="Description" />
+            <TextField fx:id="articleName" editable="false" layoutX="174.0" layoutY="39.0" />
+            <TextField fx:id="articleDescription" editable="false" layoutX="174.0" layoutY="79.0" />
+            <Button layoutX="15.0" layoutY="488.0" mnemonicParsing="false" onAction="#onObjectNewClick" prefWidth="62.4" style="-fx-background-color: #AEBD38;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </right>
