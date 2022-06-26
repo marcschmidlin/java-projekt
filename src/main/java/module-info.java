@@ -12,9 +12,9 @@ module com.example.javaprojekt226b {
     requires javafx.graphics;
     requires java.sql;
 
-    exports ui.login;
-    opens ui.login to javafx.fxml;
-    exports ui.main;
-    opens ui.main to javafx.fxml;
+    exports fem.ui.login;
+    opens fem.ui.login to javafx.fxml;
+    exports fem.ui.main;
+    opens fem.ui.main to javafx.fxml;
 
 }
