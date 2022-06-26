@@ -1,4 +1,4 @@
-package com.example.javaprojekt226b.fem.data;
+package fem.data;
 
 import java.io.File;
 import java.io.IOException;

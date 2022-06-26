@@ -1,4 +1,4 @@
-package com.example.javaprojekt226b.fem.dto;
+package fem.dto;
 
 import java.util.Objects;
 

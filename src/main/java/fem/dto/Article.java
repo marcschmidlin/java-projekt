@@ -1,4 +1,4 @@
-package com.example.javaprojekt226b.fem.dto;
+package fem.dto;
 
 public class Article implements CommaSeparatedValue {
     private String name;

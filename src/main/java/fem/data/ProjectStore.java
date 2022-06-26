@@ -1,6 +1,6 @@
-package com.example.javaprojekt226b.fem.data;
+package fem.data;
 
-import com.example.javaprojekt226b.fem.dto.Project;
+import fem.dto.Project;
 
 import java.io.File;
 
