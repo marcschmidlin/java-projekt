@@ -23,10 +23,11 @@ public class LoginController {
     public TextField password;
     @FXML
     public Label signUpMessage;
+
     LoginLogic loginlogic = new LoginLogic();
 
     public void loginButtonPushed(ActionEvent event) throws IOException {
-        boolean emptyCredentials = username.getText().isEmpty() || username.getText().isEmpty();
+        boolean emptyCredentials = username.getText().isEmpty() || password.getText().isEmpty();
         if (emptyCredentials) {
             showAlert("No username and/or password entered!");
         } else {
@@ -44,12 +45,11 @@ public class LoginController {
     }
 
     private void showAlert(String message) {
-        signUpMessage.setStyle("-fx-text-fill: #f8f4f4;");
         Alert alertnoun = new Alert(Alert.AlertType.WARNING);
         alertnoun.setTitle("Warning");
         alertnoun.setHeaderText(message);
         Stage stage = (Stage) alertnoun.getDialogPane().getScene().getWindow();
-        stage.getIcons().add(new Image(getClass().getResource("ui/icon.png").toString()));
+        stage.getIcons().add(new Image(getClass().getResource("icon.png").toString()));
         Optional<ButtonType> result = alertnoun.showAndWait();
         System.out.println("No username/pw entered!");
     }
